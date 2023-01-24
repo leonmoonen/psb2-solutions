@@ -38,11 +38,14 @@ output:
 """
 if __name__ == '__main__':
     n = int(input())
-    nums = [int(i) for i in input().split()]
-    if nums[0] < 0:
-        print(0)
-    else:
-        for i in range(1, len(nums)):
-            if nums[i] + nums[i - 1] < 0:
-                print(i)
-                break
+    input_str = input()
+    input_list = input_str.split()
+    input_int = [int(i) for i in input_list]
+    sum = 0
+    index = 0
+    for i in input_int:
+        sum += i
+        if sum < 0:
+            print(index)
+            break
+        index += 1
